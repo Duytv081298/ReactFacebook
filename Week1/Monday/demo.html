@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo html
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+</head>
+<body class="container border p-5 mt-5">
+    <p class="text-center h1 my-5">Mini game</p>
+    <p id="message" class=" h5 text-center my-3"></p>
+    <div class="row justify-content-center">
+            <div class="form-group col-5 row justify-content-around p-0 m-0">
+                <label class="col-sm-4 p-0 align-self-center mr-2 h5">Enter number</label>
+                <div class="col-sm-7 p-0">
+                  <input type="number"  id="number" class="form-control" id="inputEmail3" placeholder="Number">
+                </div>
+            </div>
+            <div class="col-2">
+                <button id="guessButton" type="button" class="  btn btn-primary " >Guess</button>
+            </div>
+    </div>
+</body>
+
+<script type="">
+    let str = '' ;
+    let button = document.getElementById('guessButton');
+    button.addEventListener('click', function() {
+       let message =  document.getElementById('message');
+       let number =  document.getElementById('number').value;
+       let result = Math.floor(Math.random() * 11);   
+       if( number == result){
+        str = "Congratulations!! You guessed correctly"
+       message.innerHTML = str;
+       alert(str + " result = " + result);
+       message.style.backgroundColor = "blue"
+       }else if( number > result ){
+        str  =  "Sorry your guess is too high";
+        message.innerHTML = str;
+        alert(str + " result = " + result);
+        message.style.backgroundColor = "red"
+       }else{
+        str ="Sorry your guess is too low";
+        message.innerHTML = str;
+        alert(str + " result = " + result);
+        message.style.backgroundColor = "red"
+       }
+});
+</script>
+
+</html>
